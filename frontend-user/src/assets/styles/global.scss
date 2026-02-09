@@ -1,0 +1,206 @@
+@use './variables.scss' as *;
+
+// Reset
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $font-family;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  color: $text-primary;
+  background-color: $bg-color;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: $primary-color;
+  text-decoration: none;
+  transition: color 0.3s;
+
+  &:hover {
+    color: $primary-light;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+// 容器
+.container {
+  width: 100%;
+  max-width: $container-width;
+  margin: 0 auto;
+  padding: 0 $spacing-lg;
+}
+
+// 区块
+.section {
+  padding: $spacing-xxl 0;
+}
+
+.section-light {
+  background-color: $bg-white;
+}
+
+.section-dark {
+  background-color: $bg-dark;
+  color: #fff;
+}
+
+.section-gray {
+  background-color: $bg-color;
+}
+
+// 文字
+.text-center {
+  text-align: center;
+}
+
+.text-primary {
+  color: $primary-color;
+}
+
+.text-secondary {
+  color: $text-secondary;
+}
+
+// Flex 工具类
+.flex {
+  display: flex;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+// 栅格
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 (-$spacing-md);
+}
+
+.col {
+  padding: 0 $spacing-md;
+}
+
+.col-3 {
+  width: 25%;
+}
+
+.col-4 {
+  width: 33.333%;
+}
+
+.col-6 {
+  width: 50%;
+}
+
+.col-12 {
+  width: 100%;
+}
+
+// 响应式
+@media (max-width: $breakpoint-lg) {
+  .col-3, .col-4 {
+    width: 50%;
+    margin-bottom: $spacing-lg;
+  }
+}
+
+@media (max-width: $breakpoint-md) {
+  .col-3, .col-4, .col-6 {
+    width: 100%;
+    margin-bottom: $spacing-md;
+  }
+  
+  .container {
+    padding: 0 $spacing-md;
+  }
+  
+  .section {
+    padding: $spacing-xl 0;
+  }
+  
+  .row {
+    margin: 0 (-$spacing-sm);
+  }
+  
+  .col {
+    padding: 0 $spacing-sm;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 $spacing-sm;
+  }
+  
+  .section {
+    padding: $spacing-lg 0;
+  }
+}
+
+// 按钮增强
+.el-button--primary {
+  background-color: $primary-color;
+  border-color: $primary-color;
+  
+  &:hover, &:focus {
+    background-color: $primary-light;
+    border-color: $primary-light;
+  }
+}
+
+// 卡片增强
+.card {
+  background: $bg-white;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-md;
+  padding: $spacing-lg;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: $shadow-lg;
+  }
+}
+
+// 动画
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.6s ease forwards;
+}
