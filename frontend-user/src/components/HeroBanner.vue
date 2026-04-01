@@ -21,9 +21,7 @@
             了解产品
             <el-icon class="el-icon--right"><ArrowRight /></el-icon>
           </el-button>
-          <el-button size="large" round @click="$router.push('/contact')">
-            免费咨询
-          </el-button>
+          <el-button size="large" round @click="$router.push('/contact')"> 免费咨询 </el-button>
         </div>
         <div class="hero-stats animate-fadeInUp" style="animation-delay: 0.6s">
           <div class="stat-item">
@@ -44,8 +42,7 @@
   </section>
 </template>
 
-<script setup>
-</script>
+<script setup></script>
 
 <style lang="scss" scoped>
 @use '@/assets/styles/variables.scss' as *;
@@ -70,7 +67,7 @@
   position: absolute;
   border-radius: 50%;
   opacity: 0.1;
-  
+
   &.shape-1 {
     width: 600px;
     height: 600px;
@@ -78,7 +75,7 @@
     top: -200px;
     right: -100px;
   }
-  
+
   &.shape-2 {
     width: 400px;
     height: 400px;
@@ -86,7 +83,7 @@
     bottom: -100px;
     left: -100px;
   }
-  
+
   &.shape-3 {
     width: 300px;
     height: 300px;
@@ -107,7 +104,7 @@
   font-weight: 700;
   line-height: 1.2;
   margin-bottom: $spacing-lg;
-  
+
   .highlight {
     background: linear-gradient(90deg, $primary-color, $primary-light);
     -webkit-background-clip: text;
@@ -127,7 +124,7 @@
   display: flex;
   gap: $spacing-md;
   margin-bottom: $spacing-xxl;
-  
+
   .el-button {
     padding: 12px 32px;
     font-size: $font-size-base;
@@ -160,11 +157,11 @@
   .hero-title {
     font-size: 40px;
   }
-  
+
   .hero-stats {
     gap: $spacing-xl;
   }
-  
+
   .stat-value {
     font-size: 28px;
   }
@@ -175,31 +172,31 @@
     min-height: auto;
     padding: $spacing-xxl 0;
   }
-  
+
   .hero-title {
     font-size: 32px;
   }
-  
+
   .hero-desc {
     font-size: $font-size-base;
   }
-  
+
   .hero-actions {
     flex-direction: column;
     align-items: stretch;
-    
+
     .el-button {
       width: 100%;
       margin: 0;
       justify-content: center;
     }
   }
-  
+
   .hero-stats {
     flex-wrap: wrap;
     gap: $spacing-lg;
   }
-  
+
   .stat-item {
     flex: 1;
     min-width: 100px;
