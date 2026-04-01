@@ -7,17 +7,17 @@
         <p class="page-subtitle">全方位智慧物流解决方案，助力企业数字化转型</p>
       </div>
     </section>
-    
+
     <!-- 产品列表 -->
     <section class="section section-light">
       <div class="container">
-        <div class="product-detail" v-for="(product, index) in products" :key="product.title">
+        <div v-for="(product, index) in products" :key="product.title" class="product-detail">
           <div class="product-content" :class="{ 'order-2': index % 2 === 1 }">
             <div class="product-tag">{{ product.tag }}</div>
             <h2 class="product-title">{{ product.title }}</h2>
             <p class="product-desc">{{ product.description }}</p>
             <div class="product-features">
-              <div class="feature-item" v-for="feature in product.features" :key="feature.title">
+              <div v-for="feature in product.features" :key="feature.title" class="feature-item">
                 <el-icon :size="20"><Check /></el-icon>
                 <div>
                   <h4>{{ feature.title }}</h4>
@@ -40,16 +40,13 @@
         </div>
       </div>
     </section>
-    
+
     <!-- 技术优势 -->
     <section class="section section-gray">
       <div class="container">
-        <SectionTitle 
-          title="技术优势" 
-          subtitle="领先的技术架构，保障系统稳定高效运行"
-        />
+        <SectionTitle title="技术优势" subtitle="领先的技术架构，保障系统稳定高效运行" />
         <div class="tech-grid">
-          <div class="tech-card" v-for="tech in technologies" :key="tech.title">
+          <div v-for="tech in technologies" :key="tech.title" class="tech-card">
             <div class="tech-icon">
               <el-icon :size="32">
                 <component :is="tech.icon" />
@@ -61,29 +58,26 @@
         </div>
       </div>
     </section>
-    
+
     <!-- 服务流程 -->
     <section class="section section-light">
       <div class="container">
-        <SectionTitle 
-          title="服务流程" 
-          subtitle="专业规范的服务流程，确保项目顺利交付"
-        />
+        <SectionTitle title="服务流程" subtitle="专业规范的服务流程，确保项目顺利交付" />
         <div class="process-steps">
-          <div class="step-item" v-for="(step, index) in steps" :key="step.title">
+          <div v-for="(step, index) in steps" :key="step.title" class="step-item">
             <div class="step-number">{{ index + 1 }}</div>
             <div class="step-content">
               <h4>{{ step.title }}</h4>
               <p>{{ step.description }}</p>
             </div>
-            <div class="step-arrow" v-if="index < steps.length - 1">
+            <div v-if="index < steps.length - 1" class="step-arrow">
               <el-icon><ArrowRight /></el-icon>
             </div>
           </div>
         </div>
       </div>
     </section>
-    
+
     <!-- CTA -->
     <section class="section cta-section">
       <div class="container text-center">
@@ -105,7 +99,8 @@ const products = [
   {
     tag: '核心产品',
     title: '智慧仓储管理系统 (WMS)',
-    description: '全面的仓库管理解决方案，通过智能算法优化库位分配、拣货路径，实现仓库作业效率最大化。支持多仓库、多货主管理，满足不同业务场景需求。',
+    description:
+      '全面的仓库管理解决方案，通过智能算法优化库位分配、拣货路径，实现仓库作业效率最大化。支持多仓库、多货主管理，满足不同业务场景需求。',
     icon: 'Box',
     gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
     features: [
@@ -118,7 +113,8 @@ const products = [
   {
     tag: '核心产品',
     title: '运输管理系统 (TMS)',
-    description: '高效的运输调度平台，整合运力资源，优化运输路线，降低运输成本。支持多种运输方式，实现运输全程可视化追踪。',
+    description:
+      '高效的运输调度平台，整合运力资源，优化运输路线，降低运输成本。支持多种运输方式，实现运输全程可视化追踪。',
     icon: 'Van',
     gradient: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
     features: [
@@ -131,7 +127,8 @@ const products = [
   {
     tag: '核心产品',
     title: '配送调度系统 (DMS)',
-    description: '智能配送解决方案，优化末端配送效率。通过智能派单、路线优化，提升配送时效，降低配送成本。',
+    description:
+      '智能配送解决方案，优化末端配送效率。通过智能派单、路线优化，提升配送时效，降低配送成本。',
     icon: 'Location',
     gradient: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
     features: [
@@ -144,7 +141,8 @@ const products = [
   {
     tag: '增值服务',
     title: '数据分析平台',
-    description: '强大的数据分析能力，将物流数据转化为业务洞察。多维度报表、可视化大屏，助力管理决策。',
+    description:
+      '强大的数据分析能力，将物流数据转化为业务洞察。多维度报表、可视化大屏，助力管理决策。',
     icon: 'DataAnalysis',
     gradient: 'linear-gradient(135deg, #fa709a 0%, #fee140 100%)',
     features: [
@@ -230,7 +228,7 @@ const steps = [
   align-items: center;
   padding: $spacing-xxl 0;
   border-bottom: 1px solid $border-light;
-  
+
   &:last-child {
     border-bottom: none;
   }
@@ -238,7 +236,7 @@ const steps = [
 
 .product-content {
   flex: 1;
-  
+
   &.order-2 {
     order: 2;
   }
@@ -277,18 +275,18 @@ const steps = [
   display: flex;
   gap: $spacing-sm;
   margin-bottom: $spacing-md;
-  
+
   .el-icon {
     color: $success-color;
     margin-top: 4px;
   }
-  
+
   h4 {
     font-size: $font-size-base;
     color: $text-primary;
     margin-bottom: 2px;
   }
-  
+
   p {
     font-size: $font-size-sm;
     color: $text-secondary;
@@ -322,7 +320,7 @@ const steps = [
   text-align: center;
   box-shadow: $shadow-md;
   transition: all 0.3s;
-  
+
   &:hover {
     transform: translateY(-8px);
     box-shadow: $shadow-lg;
@@ -384,7 +382,7 @@ const steps = [
     color: $text-primary;
     margin-bottom: $spacing-xs;
   }
-  
+
   p {
     font-size: $font-size-sm;
     color: $text-secondary;
@@ -420,29 +418,29 @@ const steps = [
   .product-detail {
     flex-direction: column;
   }
-  
+
   .product-content.order-2 {
     order: 0;
   }
-  
+
   .product-image {
     flex: none;
     width: 100%;
   }
-  
+
   .tech-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  
+
   .process-steps {
     flex-wrap: wrap;
     gap: $spacing-lg;
   }
-  
+
   .step-item {
     flex: 0 0 calc(33.333% - 16px);
   }
-  
+
   .step-arrow {
     display: none;
   }
@@ -452,15 +450,15 @@ const steps = [
   .page-title {
     font-size: $font-size-xxl;
   }
-  
+
   .product-title {
     font-size: $font-size-xl;
   }
-  
+
   .tech-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .step-item {
     flex: 0 0 100%;
   }

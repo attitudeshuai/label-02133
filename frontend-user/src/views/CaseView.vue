@@ -7,13 +7,13 @@
         <p class="page-subtitle">众多企业的信赖之选，见证智慧物流的力量</p>
       </div>
     </section>
-    
+
     <!-- 筛选标签 -->
     <section class="filter-section">
       <div class="container">
         <div class="filter-tags">
-          <el-button 
-            v-for="tag in tags" 
+          <el-button
+            v-for="tag in tags"
             :key="tag.value"
             :type="activeTag === tag.value ? 'primary' : ''"
             round
@@ -24,16 +24,12 @@
         </div>
       </div>
     </section>
-    
+
     <!-- 案例列表 -->
     <section class="section section-gray">
       <div class="container">
         <div class="case-grid">
-          <div 
-            class="case-detail-card" 
-            v-for="caseItem in filteredCases" 
-            :key="caseItem.title"
-          >
+          <div v-for="caseItem in filteredCases" :key="caseItem.title" class="case-detail-card">
             <div class="case-header" :style="{ background: caseItem.gradient }">
               <div class="case-logo">
                 <el-icon :size="48"><OfficeBuilding /></el-icon>
@@ -43,21 +39,25 @@
             <div class="case-body">
               <h3 class="case-title">{{ caseItem.title }}</h3>
               <p class="case-desc">{{ caseItem.description }}</p>
-              
+
               <div class="case-challenge">
-                <h4><el-icon><Warning /></el-icon> 面临挑战</h4>
+                <h4>
+                  <el-icon><Warning /></el-icon> 面临挑战
+                </h4>
                 <p>{{ caseItem.challenge }}</p>
               </div>
-              
+
               <div class="case-solution">
-                <h4><el-icon><Checked /></el-icon> 解决方案</h4>
+                <h4>
+                  <el-icon><Checked /></el-icon> 解决方案
+                </h4>
                 <p>{{ caseItem.solution }}</p>
               </div>
-              
+
               <div class="case-results">
                 <h4>实施效果</h4>
                 <div class="result-items">
-                  <div class="result-item" v-for="result in caseItem.results" :key="result.label">
+                  <div v-for="result in caseItem.results" :key="result.label" class="result-item">
                     <span class="result-value">{{ result.value }}</span>
                     <span class="result-label">{{ result.label }}</span>
                   </div>
@@ -68,16 +68,13 @@
         </div>
       </div>
     </section>
-    
+
     <!-- 客户评价 -->
     <section class="section section-light">
       <div class="container">
-        <SectionTitle 
-          title="客户评价" 
-          subtitle="听听他们怎么说"
-        />
+        <SectionTitle title="客户评价" subtitle="听听他们怎么说" />
         <div class="testimonial-grid">
-          <div class="testimonial-card" v-for="testimonial in testimonials" :key="testimonial.name">
+          <div v-for="testimonial in testimonials" :key="testimonial.name" class="testimonial-card">
             <div class="quote-icon">
               <el-icon :size="32"><ChatDotSquare /></el-icon>
             </div>
@@ -95,7 +92,7 @@
         </div>
       </div>
     </section>
-    
+
     <!-- CTA -->
     <section class="section cta-section">
       <div class="container text-center">
@@ -283,7 +280,7 @@ const testimonials = [
   overflow: hidden;
   box-shadow: $shadow-md;
   transition: all 0.3s;
-  
+
   &:hover {
     transform: translateY(-8px);
     box-shadow: $shadow-lg;
@@ -341,7 +338,7 @@ const testimonials = [
 .case-challenge,
 .case-solution {
   margin-bottom: $spacing-md;
-  
+
   h4 {
     display: flex;
     align-items: center;
@@ -349,12 +346,12 @@ const testimonials = [
     font-size: $font-size-sm;
     color: $text-primary;
     margin-bottom: $spacing-xs;
-    
+
     .el-icon {
       color: $warning-color;
     }
   }
-  
+
   p {
     font-size: $font-size-sm;
     color: $text-secondary;
@@ -370,7 +367,7 @@ const testimonials = [
   background: $bg-color;
   margin: 0 (-$spacing-lg) (-$spacing-lg);
   padding: $spacing-md $spacing-lg;
-  
+
   h4 {
     font-size: $font-size-sm;
     color: $text-primary;
@@ -385,14 +382,14 @@ const testimonials = [
 
 .result-item {
   text-align: center;
-  
+
   .result-value {
     display: block;
     font-size: $font-size-xl;
     font-weight: 700;
     color: $primary-color;
   }
-  
+
   .result-label {
     font-size: $font-size-xs;
     color: $text-secondary;
@@ -447,7 +444,7 @@ const testimonials = [
     font-size: $font-size-base;
     color: $text-primary;
   }
-  
+
   p {
     font-size: $font-size-sm;
     color: $text-secondary;
@@ -475,7 +472,7 @@ const testimonials = [
   .case-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .testimonial-grid {
     grid-template-columns: 1fr;
   }
@@ -485,7 +482,7 @@ const testimonials = [
   .page-title {
     font-size: $font-size-xxl;
   }
-  
+
   .result-items {
     flex-wrap: wrap;
   }

@@ -7,9 +7,7 @@
             <div class="logo-icon">知</div>
             <span class="logo-text">广州知运信息技术有限公司</span>
           </div>
-          <p class="brand-desc">
-            专注智慧物流系统解决方案，助力企业数字化转型升级
-          </p>
+          <p class="brand-desc">专注智慧物流系统解决方案，助力企业数字化转型升级</p>
           <div class="social-links">
             <a href="#" class="social-item" title="微信">
               <el-icon><ChatDotRound /></el-icon>
@@ -22,7 +20,7 @@
             </a>
           </div>
         </div>
-        
+
         <div class="footer-links">
           <div class="link-group">
             <h4>快速导航</h4>
@@ -31,7 +29,7 @@
             <router-link to="/products">产品服务</router-link>
             <router-link to="/cases">案例展示</router-link>
           </div>
-          
+
           <div class="link-group">
             <h4>产品服务</h4>
             <a href="#">智慧仓储系统</a>
@@ -39,16 +37,22 @@
             <a href="#">配送调度系统</a>
             <a href="#">数据分析平台</a>
           </div>
-          
+
           <div class="link-group">
             <h4>联系我们</h4>
-            <p><el-icon><Location /></el-icon> 广州市天河区科技园</p>
-            <p><el-icon><Phone /></el-icon> 400-888-8888</p>
-            <p><el-icon><Message /></el-icon> contact@zhiyun.com</p>
+            <p>
+              <el-icon><Location /></el-icon> 广州市天河区科技园
+            </p>
+            <p>
+              <el-icon><Phone /></el-icon> 400-888-8888
+            </p>
+            <p>
+              <el-icon><Message /></el-icon> contact@zhiyun.com
+            </p>
           </div>
         </div>
       </div>
-      
+
       <div class="footer-bottom">
         <p>© 2024 广州知运信息技术有限公司 版权所有</p>
         <p>
@@ -63,8 +67,7 @@
   </footer>
 </template>
 
-<script setup>
-</script>
+<script setup></script>
 
 <style lang="scss" scoped>
 @use '@/assets/styles/variables.scss' as *;
@@ -134,7 +137,7 @@
   justify-content: center;
   color: #fff;
   transition: all 0.3s;
-  
+
   &:hover {
     background: $primary-color;
     transform: translateY(-3px);
@@ -153,8 +156,9 @@
     margin-bottom: $spacing-md;
     font-weight: 600;
   }
-  
-  a, p {
+
+  a,
+  p {
     display: flex;
     align-items: center;
     gap: $spacing-xs;
@@ -162,12 +166,12 @@
     margin-bottom: $spacing-sm;
     font-size: $font-size-sm;
     transition: color 0.3s;
-    
+
     &:hover {
       color: $primary-color;
     }
   }
-  
+
   .el-icon {
     font-size: 16px;
   }
@@ -180,15 +184,15 @@
   align-items: center;
   font-size: $font-size-sm;
   color: rgba(255, 255, 255, 0.45);
-  
+
   a {
     color: rgba(255, 255, 255, 0.45);
-    
+
     &:hover {
       color: $primary-color;
     }
   }
-  
+
   .divider {
     margin: 0 $spacing-sm;
   }
@@ -198,16 +202,16 @@
   .footer-main {
     flex-direction: column;
   }
-  
+
   .footer-brand {
     max-width: 100%;
   }
-  
+
   .footer-links {
     flex-wrap: wrap;
     gap: $spacing-xl;
   }
-  
+
   .link-group {
     min-width: 140px;
   }
