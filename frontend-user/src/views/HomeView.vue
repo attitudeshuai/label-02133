@@ -2,17 +2,17 @@
   <div class="home-page">
     <!-- Hero Banner -->
     <HeroBanner />
-    
+
     <!-- 核心优势 -->
     <section class="section section-gray">
       <div class="container">
-        <SectionTitle 
-          title="为什么选择知运" 
+        <SectionTitle
+          title="为什么选择知运"
           subtitle="我们致力于为企业提供最专业的智慧物流解决方案"
         />
         <div class="row">
           <div class="col col-3" v-for="feature in features" :key="feature.title">
-            <FeatureCard 
+            <FeatureCard
               :icon="feature.icon"
               :title="feature.title"
               :description="feature.description"
@@ -21,17 +21,14 @@
         </div>
       </div>
     </section>
-    
+
     <!-- 产品服务 -->
     <section class="section section-light">
       <div class="container">
-        <SectionTitle 
-          title="产品与服务" 
-          subtitle="全方位的智慧物流系统，满足您的各种业务需求"
-        />
+        <SectionTitle title="产品与服务" subtitle="全方位的智慧物流系统，满足您的各种业务需求" />
         <div class="row">
           <div class="col col-4" v-for="product in products" :key="product.title">
-            <ProductCard 
+            <ProductCard
               :icon="product.icon"
               :title="product.title"
               :description="product.description"
@@ -42,7 +39,7 @@
         </div>
       </div>
     </section>
-    
+
     <!-- 数据展示 -->
     <section class="section section-dark stats-section">
       <div class="container">
@@ -59,17 +56,14 @@
         </div>
       </div>
     </section>
-    
+
     <!-- 成功案例 -->
     <section class="section section-gray">
       <div class="container">
-        <SectionTitle 
-          title="成功案例" 
-          subtitle="众多企业选择知运，实现物流数字化转型"
-        />
+        <SectionTitle title="成功案例" subtitle="众多企业选择知运，实现物流数字化转型" />
         <div class="row">
           <div class="col col-4" v-for="caseItem in cases" :key="caseItem.title">
-            <CaseCard 
+            <CaseCard
               :title="caseItem.title"
               :description="caseItem.description"
               :tag="caseItem.tag"
@@ -78,7 +72,7 @@
             />
           </div>
         </div>
-        <div class="text-center" style="margin-top: 32px;">
+        <div class="text-center" style="margin-top: 32px">
           <el-button type="primary" size="large" @click="$router.push('/cases')">
             查看更多案例
             <el-icon class="el-icon--right"><ArrowRight /></el-icon>
@@ -86,14 +80,11 @@
         </div>
       </div>
     </section>
-    
+
     <!-- 合作伙伴 -->
     <section class="section section-light">
       <div class="container">
-        <SectionTitle 
-          title="合作伙伴" 
-          subtitle="携手行业领先企业，共创智慧物流新未来"
-        />
+        <SectionTitle title="合作伙伴" subtitle="携手行业领先企业，共创智慧物流新未来" />
         <div class="partners-grid">
           <div class="partner-item" v-for="i in 8" :key="i">
             <div class="partner-logo">
@@ -104,7 +95,7 @@
         </div>
       </div>
     </section>
-    
+
     <!-- CTA -->
     <section class="section cta-section">
       <div class="container text-center">
@@ -120,11 +111,11 @@
 </template>
 
 <script setup>
-import HeroBanner from '@/components/HeroBanner.vue'
-import SectionTitle from '@/components/SectionTitle.vue'
-import FeatureCard from '@/components/FeatureCard.vue'
-import ProductCard from '@/components/ProductCard.vue'
-import CaseCard from '@/components/CaseCard.vue'
+import HeroBanner from '@/components/HeroBanner.vue';
+import SectionTitle from '@/components/SectionTitle.vue';
+import FeatureCard from '@/components/FeatureCard.vue';
+import ProductCard from '@/components/ProductCard.vue';
+import CaseCard from '@/components/CaseCard.vue';
 
 const features = [
   {
@@ -147,7 +138,7 @@ const features = [
     title: '专业服务',
     description: '资深行业专家团队，提供7x24小时技术支持与咨询服务'
   }
-]
+];
 
 const products = [
   {
@@ -168,14 +159,14 @@ const products = [
     description: '智能配送解决方案，提升末端配送效率',
     features: ['订单智能分配', '配送路线优化', '签收电子化', '配送员管理']
   }
-]
+];
 
 const stats = [
   { icon: 'User', value: '500+', label: '服务客户' },
   { icon: 'Goods', value: '1亿+', label: '日处理订单' },
   { icon: 'TrendCharts', value: '30%', label: '效率提升' },
   { icon: 'Timer', value: '99.9%', label: '系统稳定性' }
-]
+];
 
 const cases = [
   {
@@ -196,7 +187,7 @@ const cases = [
     tag: '零售配送',
     industry: '零售行业'
   }
-]
+];
 </script>
 
 <style lang="scss" scoped>
@@ -258,7 +249,7 @@ const cases = [
   align-items: center;
   justify-content: center;
   transition: all 0.3s;
-  
+
   &:hover {
     box-shadow: $shadow-md;
   }
@@ -270,7 +261,7 @@ const cases = [
   align-items: center;
   gap: $spacing-sm;
   color: $text-secondary;
-  
+
   span {
     font-size: $font-size-sm;
   }
@@ -297,7 +288,7 @@ const cases = [
   .stats-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  
+
   .partners-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -308,33 +299,33 @@ const cases = [
     grid-template-columns: repeat(2, 1fr);
     gap: $spacing-md;
   }
-  
+
   .stat-card {
     padding: $spacing-md;
   }
-  
+
   .stat-value {
     font-size: 24px;
   }
-  
+
   .stat-icon {
     width: 48px;
     height: 48px;
   }
-  
+
   .partners-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: $spacing-md;
   }
-  
+
   .partner-item {
     padding: $spacing-md;
   }
-  
+
   .cta-title {
     font-size: $font-size-xl;
   }
-  
+
   .cta-desc {
     font-size: $font-size-base;
   }
@@ -344,7 +335,7 @@ const cases = [
   .stats-grid {
     grid-template-columns: 1fr 1fr;
   }
-  
+
   .partners-grid {
     grid-template-columns: 1fr 1fr;
   }

@@ -5,10 +5,10 @@
         <div class="logo-icon">知</div>
         <span class="logo-text">广州知运信息技术</span>
       </router-link>
-      
+
       <nav class="nav-menu" :class="{ 'nav-open': menuOpen }">
-        <router-link 
-          v-for="item in menuItems" 
+        <router-link
+          v-for="item in menuItems"
           :key="item.path"
           :to="item.path"
           class="nav-item"
@@ -17,11 +17,9 @@
           {{ item.name }}
         </router-link>
       </nav>
-      
+
       <div class="nav-actions">
-        <el-button type="primary" round @click="$router.push('/contact')">
-          联系我们
-        </el-button>
+        <el-button type="primary" round @click="$router.push('/contact')"> 联系我们 </el-button>
         <div class="menu-toggle" @click="menuOpen = !menuOpen">
           <el-icon :size="24">
             <component :is="menuOpen ? 'Close' : 'Menu'" />
@@ -33,7 +31,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue';
 
 const menuItems = [
   { name: '首页', path: '/' },
@@ -41,22 +39,22 @@ const menuItems = [
   { name: '产品服务', path: '/products' },
   { name: '案例展示', path: '/cases' },
   { name: '联系我们', path: '/contact' }
-]
+];
 
-const isScrolled = ref(false)
-const menuOpen = ref(false)
+const isScrolled = ref(false);
+const menuOpen = ref(false);
 
 const handleScroll = () => {
-  isScrolled.value = window.scrollY > 50
-}
+  isScrolled.value = window.scrollY > 50;
+};
 
 onMounted(() => {
-  window.addEventListener('scroll', handleScroll)
-})
+  window.addEventListener('scroll', handleScroll);
+});
 
 onUnmounted(() => {
-  window.removeEventListener('scroll', handleScroll)
-})
+  window.removeEventListener('scroll', handleScroll);
+});
 </script>
 
 <style lang="scss" scoped>
@@ -74,7 +72,7 @@ onUnmounted(() => {
   transition: all 0.3s ease;
   display: flex;
   align-items: center;
-  
+
   &.nav-scrolled {
     box-shadow: $shadow-sm;
   }
@@ -85,7 +83,7 @@ onUnmounted(() => {
   align-items: center;
   gap: $spacing-sm;
   color: $text-primary;
-  
+
   &:hover {
     color: $text-primary;
   }
@@ -120,7 +118,7 @@ onUnmounted(() => {
   padding: $spacing-xs 0;
   position: relative;
   transition: color 0.3s;
-  
+
   &::after {
     content: '';
     position: absolute;
@@ -131,11 +129,11 @@ onUnmounted(() => {
     background: $primary-color;
     transition: width 0.3s;
   }
-  
+
   &:hover,
   &.router-link-active {
     color: $primary-color;
-    
+
     &::after {
       width: 100%;
     }
@@ -169,23 +167,23 @@ onUnmounted(() => {
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease;
-    
+
     &.nav-open {
       transform: translateY(0);
       opacity: 1;
       visibility: visible;
     }
   }
-  
+
   .nav-item {
     padding: $spacing-sm 0;
     border-bottom: 1px solid $border-light;
   }
-  
+
   .menu-toggle {
     display: block;
   }
-  
+
   .nav-actions .el-button {
     display: none;
   }

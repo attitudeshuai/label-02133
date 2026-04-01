@@ -42,9 +42,9 @@ defineProps({
     type: Array,
     default: () => []
   }
-})
+});
 
-defineEmits(['detail'])
+defineEmits(['detail']);
 </script>
 
 <style lang="scss" scoped>
@@ -56,7 +56,7 @@ defineEmits(['detail'])
   overflow: hidden;
   box-shadow: $shadow-md;
   transition: all 0.3s ease;
-  
+
   &:hover {
     transform: translateY(-8px);
     box-shadow: $shadow-lg;
@@ -103,7 +103,7 @@ defineEmits(['detail'])
 .features {
   list-style: none;
   margin-bottom: $spacing-lg;
-  
+
   li {
     display: flex;
     align-items: center;
@@ -111,7 +111,7 @@ defineEmits(['detail'])
     font-size: $font-size-sm;
     color: $text-regular;
     margin-bottom: $spacing-xs;
-    
+
     .el-icon {
       color: $success-color;
     }
@@ -123,8 +123,9 @@ defineEmits(['detail'])
   color: $primary-color;
   background: rgba($primary-color, 0.1);
   border-color: $primary-color;
-  
-  &:hover, &:focus {
+
+  &:hover,
+  &:focus {
     color: #fff;
     background: $primary-color;
     border-color: $primary-color;

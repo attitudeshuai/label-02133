@@ -20,7 +20,7 @@ defineProps({
     type: Boolean,
     default: false
   }
-})
+});
 </script>
 
 <style lang="scss" scoped>
@@ -57,7 +57,7 @@ defineProps({
   .title {
     color: #fff;
   }
-  
+
   .subtitle {
     color: rgba(255, 255, 255, 0.75);
   }
