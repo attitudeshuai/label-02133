@@ -13,8 +13,8 @@
 </template>
 
 <script setup>
-import NavHeader from '@/components/NavHeader.vue'
-import FooterSection from '@/components/FooterSection.vue'
+import NavHeader from '@/components/NavHeader.vue';
+import FooterSection from '@/components/FooterSection.vue';
 </script>
 
 <style lang="scss">

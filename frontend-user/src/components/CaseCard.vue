@@ -41,9 +41,9 @@ defineProps({
     type: String,
     default: '物流行业'
   }
-})
+});
 
-defineEmits(['click'])
+defineEmits(['click']);
 </script>
 
 <style lang="scss" scoped>
@@ -56,11 +56,11 @@ defineEmits(['click'])
   box-shadow: $shadow-md;
   cursor: pointer;
   transition: all 0.3s ease;
-  
+
   &:hover {
     transform: translateY(-8px);
     box-shadow: $shadow-lg;
-    
+
     .link {
       color: $primary-color;
     }

@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router';
 
 const routes = [
   {
@@ -31,23 +31,23 @@ const routes = [
     component: () => import('@/views/ContactView.vue'),
     meta: { title: '联系我们' }
   }
-]
+];
 
 const router = createRouter({
   history: createWebHistory(),
   routes,
   scrollBehavior(to, from, savedPosition) {
     if (savedPosition) {
-      return savedPosition
+      return savedPosition;
     } else {
-      return { top: 0 }
+      return { top: 0 };
     }
   }
-})
+});
 
 router.beforeEach((to, from, next) => {
-  document.title = `${to.meta.title} - 广州知运信息技术有限公司`
-  next()
-})
+  document.title = `${to.meta.title} - 广州知运信息技术有限公司`;
+  next();
+});
 
-export default router
+export default router;

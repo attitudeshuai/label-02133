@@ -7,13 +7,13 @@
         <p class="page-subtitle">众多企业的信赖之选，见证智慧物流的力量</p>
       </div>
     </section>
-    
+
     <!-- 筛选标签 -->
     <section class="filter-section">
       <div class="container">
         <div class="filter-tags">
-          <el-button 
-            v-for="tag in tags" 
+          <el-button
+            v-for="tag in tags"
             :key="tag.value"
             :type="activeTag === tag.value ? 'primary' : ''"
             round
@@ -24,16 +24,12 @@
         </div>
       </div>
     </section>
-    
+
     <!-- 案例列表 -->
     <section class="section section-gray">
       <div class="container">
         <div class="case-grid">
-          <div 
-            class="case-detail-card" 
-            v-for="caseItem in filteredCases" 
-            :key="caseItem.title"
-          >
+          <div class="case-detail-card" v-for="caseItem in filteredCases" :key="caseItem.title">
             <div class="case-header" :style="{ background: caseItem.gradient }">
               <div class="case-logo">
                 <el-icon :size="48"><OfficeBuilding /></el-icon>
@@ -43,17 +39,21 @@
             <div class="case-body">
               <h3 class="case-title">{{ caseItem.title }}</h3>
               <p class="case-desc">{{ caseItem.description }}</p>
-              
+
               <div class="case-challenge">
-                <h4><el-icon><Warning /></el-icon> 面临挑战</h4>
+                <h4>
+                  <el-icon><Warning /></el-icon> 面临挑战
+                </h4>
                 <p>{{ caseItem.challenge }}</p>
               </div>
-              
+
               <div class="case-solution">
-                <h4><el-icon><Checked /></el-icon> 解决方案</h4>
+                <h4>
+                  <el-icon><Checked /></el-icon> 解决方案
+                </h4>
                 <p>{{ caseItem.solution }}</p>
               </div>
-              
+
               <div class="case-results">
                 <h4>实施效果</h4>
                 <div class="result-items">
@@ -68,14 +68,11 @@
         </div>
       </div>
     </section>
-    
+
     <!-- 客户评价 -->
     <section class="section section-light">
       <div class="container">
-        <SectionTitle 
-          title="客户评价" 
-          subtitle="听听他们怎么说"
-        />
+        <SectionTitle title="客户评价" subtitle="听听他们怎么说" />
         <div class="testimonial-grid">
           <div class="testimonial-card" v-for="testimonial in testimonials" :key="testimonial.name">
             <div class="quote-icon">
@@ -95,7 +92,7 @@
         </div>
       </div>
     </section>
-    
+
     <!-- CTA -->
     <section class="section cta-section">
       <div class="container text-center">
@@ -111,10 +108,10 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
-import SectionTitle from '@/components/SectionTitle.vue'
+import { ref, computed } from 'vue';
+import SectionTitle from '@/components/SectionTitle.vue';
 
-const activeTag = ref('all')
+const activeTag = ref('all');
 
 const tags = [
   { label: '全部案例', value: 'all' },
@@ -122,7 +119,7 @@ const tags = [
   { label: '快递物流', value: 'express' },
   { label: '零售配送', value: 'retail' },
   { label: '制造业', value: 'manufacturing' }
-]
+];
 
 const cases = [
   {
@@ -209,14 +206,14 @@ const cases = [
       { value: '30%', label: '效率提升' }
     ]
   }
-]
+];
 
 const filteredCases = computed(() => {
   if (activeTag.value === 'all') {
-    return cases
+    return cases;
   }
-  return cases.filter(c => c.tag === activeTag.value)
-})
+  return cases.filter(c => c.tag === activeTag.value);
+});
 
 const testimonials = [
   {
@@ -234,7 +231,7 @@ const testimonials = [
     name: '张总监',
     title: '某零售集团供应链总监'
   }
-]
+];
 </script>
 
 <style lang="scss" scoped>
@@ -283,7 +280,7 @@ const testimonials = [
   overflow: hidden;
   box-shadow: $shadow-md;
   transition: all 0.3s;
-  
+
   &:hover {
     transform: translateY(-8px);
     box-shadow: $shadow-lg;
@@ -341,7 +338,7 @@ const testimonials = [
 .case-challenge,
 .case-solution {
   margin-bottom: $spacing-md;
-  
+
   h4 {
     display: flex;
     align-items: center;
@@ -349,12 +346,12 @@ const testimonials = [
     font-size: $font-size-sm;
     color: $text-primary;
     margin-bottom: $spacing-xs;
-    
+
     .el-icon {
       color: $warning-color;
     }
   }
-  
+
   p {
     font-size: $font-size-sm;
     color: $text-secondary;
@@ -370,7 +367,7 @@ const testimonials = [
   background: $bg-color;
   margin: 0 (-$spacing-lg) (-$spacing-lg);
   padding: $spacing-md $spacing-lg;
-  
+
   h4 {
     font-size: $font-size-sm;
     color: $text-primary;
@@ -385,14 +382,14 @@ const testimonials = [
 
 .result-item {
   text-align: center;
-  
+
   .result-value {
     display: block;
     font-size: $font-size-xl;
     font-weight: 700;
     color: $primary-color;
   }
-  
+
   .result-label {
     font-size: $font-size-xs;
     color: $text-secondary;
@@ -447,7 +444,7 @@ const testimonials = [
     font-size: $font-size-base;
     color: $text-primary;
   }
-  
+
   p {
     font-size: $font-size-sm;
     color: $text-secondary;
@@ -475,7 +472,7 @@ const testimonials = [
   .case-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .testimonial-grid {
     grid-template-columns: 1fr;
   }
@@ -485,7 +482,7 @@ const testimonials = [
   .page-title {
     font-size: $font-size-xxl;
   }
-  
+
   .result-items {
     flex-wrap: wrap;
   }

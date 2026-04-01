@@ -7,7 +7,7 @@
         <p class="page-subtitle">专注智慧物流，赋能企业数字化转型</p>
       </div>
     </section>
-    
+
     <!-- 公司简介 -->
     <section class="section section-light">
       <div class="container">
@@ -47,14 +47,11 @@
         </div>
       </div>
     </section>
-    
+
     <!-- 发展历程 -->
     <section class="section section-gray">
       <div class="container">
-        <SectionTitle 
-          title="发展历程" 
-          subtitle="砥砺前行，不断突破"
-        />
+        <SectionTitle title="发展历程" subtitle="砥砺前行，不断突破" />
         <div class="timeline">
           <div class="timeline-item" v-for="item in timeline" :key="item.year">
             <div class="timeline-year">{{ item.year }}</div>
@@ -66,14 +63,11 @@
         </div>
       </div>
     </section>
-    
+
     <!-- 企业文化 -->
     <section class="section section-light">
       <div class="container">
-        <SectionTitle 
-          title="企业文化" 
-          subtitle="以客户为中心，以创新为驱动"
-        />
+        <SectionTitle title="企业文化" subtitle="以客户为中心，以创新为驱动" />
         <div class="culture-grid">
           <div class="culture-card" v-for="culture in cultures" :key="culture.title">
             <div class="culture-icon">
@@ -87,14 +81,11 @@
         </div>
       </div>
     </section>
-    
+
     <!-- 团队风采 -->
     <section class="section section-gray">
       <div class="container">
-        <SectionTitle 
-          title="核心团队" 
-          subtitle="汇聚行业精英，打造专业团队"
-        />
+        <SectionTitle title="核心团队" subtitle="汇聚行业精英，打造专业团队" />
         <div class="team-grid">
           <div class="team-card" v-for="member in team" :key="member.name">
             <div class="member-avatar">
@@ -111,7 +102,7 @@
 </template>
 
 <script setup>
-import SectionTitle from '@/components/SectionTitle.vue'
+import SectionTitle from '@/components/SectionTitle.vue';
 
 const timeline = [
   {
@@ -144,7 +135,7 @@ const timeline = [
     title: '行业领先',
     description: '成为智慧物流领域领先服务商，服务客户超过500家'
   }
-]
+];
 
 const cultures = [
   {
@@ -167,7 +158,7 @@ const cultures = [
     title: '精神',
     description: '追求卓越、永不止步、勇于担当、团队协作'
   }
-]
+];
 
 const team = [
   {
@@ -190,7 +181,7 @@ const team = [
     title: '产品VP',
     description: '12年产品经验，深耕物流行业产品设计'
   }
-]
+];
 </script>
 
 <style lang="scss" scoped>
@@ -239,14 +230,14 @@ const team = [
 
 .intro-stats .stat-item {
   text-align: center;
-  
+
   .value {
     display: block;
     font-size: 36px;
     font-weight: 700;
     color: $primary-color;
   }
-  
+
   .label {
     font-size: $font-size-sm;
     color: $text-secondary;
@@ -268,7 +259,7 @@ const team = [
   justify-content: center;
   gap: $spacing-md;
   color: $primary-color;
-  
+
   span {
     font-size: $font-size-sm;
     color: $text-secondary;
@@ -278,7 +269,7 @@ const team = [
 .timeline {
   position: relative;
   padding-left: 120px;
-  
+
   &::before {
     content: '';
     position: absolute;
@@ -293,7 +284,7 @@ const team = [
 .timeline-item {
   position: relative;
   padding-bottom: $spacing-xl;
-  
+
   &::before {
     content: '';
     position: absolute;
@@ -322,13 +313,13 @@ const team = [
   padding: $spacing-lg;
   border-radius: $radius-md;
   box-shadow: $shadow-sm;
-  
+
   h4 {
     font-size: $font-size-lg;
     color: $text-primary;
     margin-bottom: $spacing-xs;
   }
-  
+
   p {
     font-size: $font-size-sm;
     color: $text-secondary;
@@ -348,7 +339,7 @@ const team = [
   text-align: center;
   box-shadow: $shadow-md;
   transition: all 0.3s;
-  
+
   &:hover {
     transform: translateY(-8px);
     box-shadow: $shadow-lg;
@@ -426,12 +417,12 @@ const team = [
   .about-intro {
     flex-direction: column;
   }
-  
+
   .intro-image {
     flex: none;
     width: 100%;
   }
-  
+
   .culture-grid,
   .team-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -442,29 +433,29 @@ const team = [
   .page-title {
     font-size: $font-size-xxl;
   }
-  
+
   .timeline {
     padding-left: 30px;
-    
+
     &::before {
       left: 10px;
     }
   }
-  
+
   .timeline-year {
     position: static;
     margin-bottom: $spacing-xs;
   }
-  
+
   .timeline-item::before {
     left: -24px;
   }
-  
+
   .culture-grid,
   .team-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .intro-stats {
     flex-wrap: wrap;
   }

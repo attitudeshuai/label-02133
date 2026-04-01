@@ -24,7 +24,7 @@ defineProps({
     type: String,
     required: true
   }
-})
+});
 </script>
 
 <style lang="scss" scoped>
@@ -37,11 +37,11 @@ defineProps({
   text-align: center;
   box-shadow: $shadow-md;
   transition: all 0.3s ease;
-  
+
   &:hover {
     transform: translateY(-8px);
     box-shadow: $shadow-lg;
-    
+
     .icon-wrapper {
       background: $primary-color;
       color: #fff;

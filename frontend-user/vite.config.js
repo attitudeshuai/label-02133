@@ -23,5 +23,20 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     assetsDir: 'assets'
+  },
+  test: {
+    globals: true,
+    environment: 'jsdom',
+    coverage: {
+      provider: 'v8',
+      reporter: ['text', 'json', 'html'],
+      exclude: [
+        'node_modules/',
+        'src/router/',
+        '**/*.js',
+        '**/*.scss'
+      ]
+    },
+    include: ['src/**/*.{test,spec}.{js,ts,jsx,tsx}']
   }
 })

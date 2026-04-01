@@ -7,7 +7,7 @@
         <p class="page-subtitle">期待与您的合作，共创智慧物流新未来</p>
       </div>
     </section>
-    
+
     <!-- 联系方式 -->
     <section class="section section-light">
       <div class="container">
@@ -17,7 +17,7 @@
             <p class="info-desc">
               如有任何问题或合作意向，欢迎通过以下方式联系我们，我们将在24小时内回复您。
             </p>
-            
+
             <div class="info-list">
               <div class="info-item">
                 <div class="info-icon">
@@ -28,7 +28,7 @@
                   <p>广州市天河区科技园创新大厦A座18楼</p>
                 </div>
               </div>
-              
+
               <div class="info-item">
                 <div class="info-icon">
                   <el-icon :size="24"><Phone /></el-icon>
@@ -39,7 +39,7 @@
                   <p class="sub">工作时间：周一至周五 9:00-18:00</p>
                 </div>
               </div>
-              
+
               <div class="info-item">
                 <div class="info-icon">
                   <el-icon :size="24"><Message /></el-icon>
@@ -50,7 +50,7 @@
                   <p class="sub">商务合作：business@zhiyun.com</p>
                 </div>
               </div>
-              
+
               <div class="info-item">
                 <div class="info-icon">
                   <el-icon :size="24"><ChatDotRound /></el-icon>
@@ -61,7 +61,7 @@
                 </div>
               </div>
             </div>
-            
+
             <div class="social-section">
               <h4>关注我们</h4>
               <div class="social-links">
@@ -77,48 +77,48 @@
               </div>
             </div>
           </div>
-          
+
           <div class="contact-form-wrapper">
             <div class="form-card">
               <h3>在线留言</h3>
               <p class="form-desc">填写以下表单，我们将尽快与您联系</p>
-              
-              <el-form 
+
+              <el-form
                 ref="formRef"
-                :model="form" 
-                :rules="rules" 
+                :model="form"
+                :rules="rules"
                 label-position="top"
                 @submit.prevent="handleSubmit"
               >
                 <el-form-item label="您的姓名" prop="name">
                   <el-input v-model="form.name" placeholder="请输入您的姓名" />
                 </el-form-item>
-                
+
                 <el-form-item label="联系电话" prop="phone">
                   <el-input v-model="form.phone" placeholder="请输入您的联系电话" />
                 </el-form-item>
-                
+
                 <el-form-item label="电子邮箱" prop="email">
                   <el-input v-model="form.email" placeholder="请输入您的电子邮箱" />
                 </el-form-item>
-                
+
                 <el-form-item label="公司名称" prop="company">
                   <el-input v-model="form.company" placeholder="请输入您的公司名称" />
                 </el-form-item>
-                
+
                 <el-form-item label="咨询内容" prop="message">
-                  <el-input 
-                    v-model="form.message" 
-                    type="textarea" 
+                  <el-input
+                    v-model="form.message"
+                    type="textarea"
                     :rows="4"
                     placeholder="请描述您的需求或问题"
                   />
                 </el-form-item>
-                
+
                 <el-form-item>
-                  <el-button 
-                    type="primary" 
-                    size="large" 
+                  <el-button
+                    type="primary"
+                    size="large"
                     :loading="submitting"
                     style="width: 100%"
                     @click="handleSubmit"
@@ -132,11 +132,11 @@
         </div>
       </div>
     </section>
-    
+
     <!-- 地图区域 -->
     <section class="map-section">
-      <a 
-        href="https://map.baidu.com/search/%E5%B9%BF%E5%B7%9E%E5%B8%82%E5%A4%A9%E6%B2%B3%E5%8C%BA%E7%A7%91%E6%8A%80%E5%9B%AD/@12615115.52,2642045.75,17z" 
+      <a
+        href="https://map.baidu.com/search/%E5%B9%BF%E5%B7%9E%E5%B8%82%E5%A4%A9%E6%B2%B3%E5%8C%BA%E7%A7%91%E6%8A%80%E5%9B%AD/@12615115.52,2642045.75,17z"
         target="_blank"
         class="map-link"
       >
@@ -147,24 +147,23 @@
           </div>
           <div class="map-info">
             <h4>广州知运信息技术有限公司</h4>
-            <p><el-icon><Location /></el-icon> 广州市天河区科技园创新大厦A座18楼</p>
+            <p>
+              <el-icon><Location /></el-icon> 广州市天河区科技园创新大厦A座18楼
+            </p>
             <span class="map-tip">点击查看详细位置</span>
           </div>
         </div>
       </a>
     </section>
-    
+
     <!-- 常见问题 -->
     <section class="section section-gray">
       <div class="container">
-        <SectionTitle 
-          title="常见问题" 
-          subtitle="快速了解您关心的问题"
-        />
+        <SectionTitle title="常见问题" subtitle="快速了解您关心的问题" />
         <div class="faq-list">
           <el-collapse v-model="activeFaq">
-            <el-collapse-item 
-              v-for="faq in faqs" 
+            <el-collapse-item
+              v-for="faq in faqs"
               :key="faq.question"
               :title="faq.question"
               :name="faq.question"
@@ -179,13 +178,13 @@
 </template>
 
 <script setup>
-import { ref, reactive } from 'vue'
-import { ElMessage } from 'element-plus'
-import SectionTitle from '@/components/SectionTitle.vue'
+import { ref, reactive } from 'vue';
+import { ElMessage } from 'element-plus';
+import SectionTitle from '@/components/SectionTitle.vue';
 
-const formRef = ref(null)
-const submitting = ref(false)
-const activeFaq = ref([])
+const formRef = ref(null);
+const submitting = ref(false);
+const activeFaq = ref([]);
 
 const form = reactive({
   name: '',
@@ -193,12 +192,10 @@ const form = reactive({
   email: '',
   company: '',
   message: ''
-})
+});
 
 const rules = {
-  name: [
-    { required: true, message: '请输入您的姓名', trigger: 'blur' }
-  ],
+  name: [{ required: true, message: '请输入您的姓名', trigger: 'blur' }],
   phone: [
     { required: true, message: '请输入您的联系电话', trigger: 'blur' },
     { pattern: /^1[3-9]\d{9}$/, message: '请输入正确的手机号码', trigger: 'blur' }
@@ -207,49 +204,52 @@ const rules = {
     { required: true, message: '请输入您的电子邮箱', trigger: 'blur' },
     { type: 'email', message: '请输入正确的邮箱地址', trigger: 'blur' }
   ],
-  message: [
-    { required: true, message: '请输入咨询内容', trigger: 'blur' }
-  ]
-}
+  message: [{ required: true, message: '请输入咨询内容', trigger: 'blur' }]
+};
 
 const handleSubmit = async () => {
-  if (!formRef.value) return
-  
-  await formRef.value.validate((valid) => {
+  if (!formRef.value) return;
+
+  await formRef.value.validate(valid => {
     if (valid) {
-      submitting.value = true
+      submitting.value = true;
       // 模拟提交
       setTimeout(() => {
-        submitting.value = false
-        ElMessage.success('留言提交成功，我们将尽快与您联系！')
-        formRef.value.resetFields()
-      }, 1500)
+        submitting.value = false;
+        ElMessage.success('留言提交成功，我们将尽快与您联系！');
+        formRef.value.resetFields();
+      }, 1500);
     }
-  })
-}
+  });
+};
 
 const faqs = [
   {
     question: '知运的产品适合什么规模的企业？',
-    answer: '知运的产品适合各种规模的企业，从中小型企业到大型集团都有对应的解决方案。我们提供灵活的部署方式和定价策略，可以根据您的业务规模和需求进行定制。'
+    answer:
+      '知运的产品适合各种规模的企业，从中小型企业到大型集团都有对应的解决方案。我们提供灵活的部署方式和定价策略，可以根据您的业务规模和需求进行定制。'
   },
   {
     question: '系统部署需要多长时间？',
-    answer: '根据项目复杂度不同，标准产品部署通常需要2-4周，定制化项目需要1-3个月。我们会在项目启动前提供详细的实施计划和时间表。'
+    answer:
+      '根据项目复杂度不同，标准产品部署通常需要2-4周，定制化项目需要1-3个月。我们会在项目启动前提供详细的实施计划和时间表。'
   },
   {
     question: '是否提供系统培训服务？',
-    answer: '是的，我们提供完整的培训服务，包括管理员培训、操作员培训和在线培训课程。确保您的团队能够熟练使用系统。'
+    answer:
+      '是的，我们提供完整的培训服务，包括管理员培训、操作员培训和在线培训课程。确保您的团队能够熟练使用系统。'
   },
   {
     question: '系统是否支持与现有ERP对接？',
-    answer: '支持。知运系统提供标准化的API接口，可以与主流ERP系统（如SAP、Oracle、用友、金蝶等）进行无缝对接。'
+    answer:
+      '支持。知运系统提供标准化的API接口，可以与主流ERP系统（如SAP、Oracle、用友、金蝶等）进行无缝对接。'
   },
   {
     question: '数据安全如何保障？',
-    answer: '我们采用多层安全防护措施，包括数据加密传输、访问权限控制、定期安全审计等。系统已通过等保三级认证，确保您的数据安全。'
+    answer:
+      '我们采用多层安全防护措施，包括数据加密传输、访问权限控制、定期安全审计等。系统已通过等保三级认证，确保您的数据安全。'
   }
-]
+];
 </script>
 
 <style lang="scss" scoped>
@@ -280,7 +280,7 @@ const faqs = [
 
 .contact-info {
   flex: 1;
-  
+
   h2 {
     font-size: $font-size-xxl;
     color: $text-primary;
@@ -323,11 +323,11 @@ const faqs = [
     color: $text-primary;
     margin-bottom: $spacing-xs;
   }
-  
+
   p {
     font-size: $font-size-sm;
     color: $text-regular;
-    
+
     &.sub {
       color: $text-secondary;
       margin-top: 2px;
@@ -358,7 +358,7 @@ const faqs = [
   justify-content: center;
   color: $text-secondary;
   transition: all 0.3s;
-  
+
   &:hover {
     background: $primary-color;
     color: #fff;
@@ -374,13 +374,13 @@ const faqs = [
   padding: $spacing-xl;
   border-radius: $radius-lg;
   box-shadow: $shadow-lg;
-  
+
   h3 {
     font-size: $font-size-xl;
     color: $text-primary;
     margin-bottom: $spacing-xs;
   }
-  
+
   .form-desc {
     font-size: $font-size-sm;
     color: $text-secondary;
@@ -401,12 +401,12 @@ const faqs = [
   height: 100%;
   position: relative;
   cursor: pointer;
-  
+
   &:hover {
     .map-bg {
       transform: scale(1.02);
     }
-    
+
     .map-tip {
       opacity: 1;
     }
@@ -443,7 +443,7 @@ const faqs = [
   box-shadow: 0 6px 24px rgba($primary-color, 0.5);
   margin-bottom: $spacing-md;
   animation: markerBounce 2s ease-in-out infinite;
-  
+
   .el-icon {
     transform: rotate(45deg);
     color: #fff;
@@ -451,8 +451,13 @@ const faqs = [
 }
 
 @keyframes markerBounce {
-  0%, 100% { transform: rotate(-45deg) translateY(0); }
-  50% { transform: rotate(-45deg) translateY(-8px); }
+  0%,
+  100% {
+    transform: rotate(-45deg) translateY(0);
+  }
+  50% {
+    transform: rotate(-45deg) translateY(-8px);
+  }
 }
 
 .map-info {
@@ -461,14 +466,14 @@ const faqs = [
   border-radius: $radius-lg;
   text-align: center;
   box-shadow: $shadow-lg;
-  
+
   h4 {
     font-size: $font-size-lg;
     color: $text-primary;
     margin-bottom: $spacing-sm;
     font-weight: 600;
   }
-  
+
   p {
     display: flex;
     align-items: center;
@@ -477,7 +482,7 @@ const faqs = [
     font-size: $font-size-sm;
     color: $text-secondary;
     margin-bottom: $spacing-sm;
-    
+
     .el-icon {
       color: $primary-color;
     }
@@ -494,11 +499,11 @@ const faqs = [
 .faq-list {
   max-width: 800px;
   margin: 0 auto;
-  
+
   :deep(.el-collapse) {
     border: none;
   }
-  
+
   :deep(.el-collapse-item__header) {
     font-size: $font-size-base;
     font-weight: 500;
@@ -509,12 +514,12 @@ const faqs = [
     margin-bottom: $spacing-sm;
     border: none;
   }
-  
+
   :deep(.el-collapse-item__wrap) {
     background: transparent;
     border: none;
   }
-  
+
   :deep(.el-collapse-item__content) {
     padding: 0 $spacing-lg $spacing-md;
     font-size: $font-size-sm;
@@ -527,7 +532,7 @@ const faqs = [
   .contact-grid {
     flex-direction: column;
   }
-  
+
   .contact-form-wrapper {
     flex: none;
     width: 100%;
@@ -538,7 +543,7 @@ const faqs = [
   .page-title {
     font-size: $font-size-xxl;
   }
-  
+
   .map-section {
     height: 300px;
   }
